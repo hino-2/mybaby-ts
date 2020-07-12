@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { IBackendResponse } from "./interfaces";
+import { login } from "./Logic/user-management";
+import { userInfoAction } from "./actions";
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		(async function () {
+			const loginResult: IBackendResponse = await login("w@w", "w");
+			if (loginResult.data && "_id" in loginResult.data)
+				dispatch(userInfoAction(loginResult.data));
+			else alert(loginResult.error);
+		})();
+	}, []);
+
+	return <div className="App"></div>;
+};
 
 export default App;

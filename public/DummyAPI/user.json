@@ -1,0 +1,43 @@
+{
+	"data": {
+		"_id": "5eb406b38f72593744f19f01",
+		"babies": [
+			{
+				"id": "ka562qsj",
+				"name": "Дашуля",
+				"gender": "f",
+				"dob": "Fri Dec 13 2019 05:00:00 GMT+0500 (Екатеринбург, стандартное время)",
+				"weights": [
+					{
+						"date": "Fri Dec 13 2019 05:00:00 GMT+0500 (Екатеринбург, стандартное время)",
+						"id": "herqihoiwehr",
+						"weight": 3530
+					},
+					{
+						"date": "Fri Feb 01 2019 05:00:00 GMT+0500 (Екатеринбург, стандартное время)",
+						"id": "kjlk34j52",
+						"weight": 2000
+					},
+					{
+						"date": "Sun Apr 05 2020 05:00:00 GMT+0500 (Екатеринбург, стандартное время)",
+						"id": "2nmnm4435",
+						"weight": 7123
+					}
+				]
+			},
+			{
+				"id": "kagnoucd",
+				"name": "Зевсуля",
+				"gender": "m",
+				"dob": "Tue Jan 21 2020 05:00:00 GMT+0500 (Екатеринбург, стандартное время)",
+				"weights": []
+			}
+		],
+		"name": "Игорь",
+		"email": "w@w",
+		"hashedPassword": "$2b$10$ZSunWcj4GRLqDzL2UQD7qeBNU/YdftnPSIBXw6mB/Ni.dgyTk9E6K",
+		"gender": "m",
+		"money": 0
+	},
+	"error": null
+}
