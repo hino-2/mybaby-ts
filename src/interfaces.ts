@@ -1,3 +1,5 @@
+import allReducers from "./Redux/reducers/_allReducers";
+
 export interface IBabyWeight {
 	date: Date;
 	id: string;
@@ -7,7 +9,7 @@ export interface IBabyWeight {
 export interface IBaby {
 	id: string;
 	name: string;
-	gender: string;
+	gender: "m" | "f";
 	dob: Date;
 	weights: IBabyWeight[] | [];
 }
@@ -17,7 +19,7 @@ export interface IUser {
 	babies: IBaby[] | [];
 	name: string;
 	email: string;
-	gender: string;
+	gender: "m" | "f";
 	money: number;
 }
 
@@ -25,6 +27,8 @@ export interface IBackendResponse {
 	data: IUser | null;
 	error: string | null;
 }
+
+export type RootState = ReturnType<typeof allReducers>;
 
 interface IReduxAction {
 	type: string;

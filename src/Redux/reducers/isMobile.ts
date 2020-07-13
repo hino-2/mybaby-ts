@@ -1,4 +1,4 @@
-import { IReduxActionIsMobile } from "../interfaces";
+import { IReduxActionIsMobile } from "../../interfaces";
 
 const isMobileReducer = (state = false, action: IReduxActionIsMobile): boolean => {
 	switch (action.type) {

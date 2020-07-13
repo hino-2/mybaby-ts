@@ -1,0 +1,12 @@
+$boy: #2196f3;
+$girl: #f06292;
+$dad: cornflowerblue;
+$mom: lightcoral;
+@mixin selectedBabyBorder {
+	border: 3px solid green;
+}
+
+@mixin babyListContainerBorder {
+	border: 1px solid #00acc1;
+	border-radius: 2px;
+}

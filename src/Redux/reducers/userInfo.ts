@@ -1,4 +1,4 @@
-import { IReduxActionUserInfo } from "../interfaces";
+import { IReduxActionUserInfo } from "../../interfaces";
 
 const userInfo = (state = null, action: IReduxActionUserInfo) => {
 	switch (action.type) {

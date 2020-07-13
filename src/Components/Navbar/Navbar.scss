@@ -1,0 +1,15 @@
+@import "../../Styles/sass_global.scss";
+
+.navbar {
+	width: 14vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 5px 5px;
+
+	.babylist-container {
+		padding: 3px;
+		margin-top: 3px;
+		@include babyListContainerBorder;
+	}
+}
