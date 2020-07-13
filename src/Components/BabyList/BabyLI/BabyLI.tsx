@@ -15,8 +15,8 @@ type BabyLIProps = {
 
 const BabyLI: React.FC<BabyLIProps> = ({ baby, selected, isEditable, showAge }) => {
 	let classes: string[] = ["baby-li"];
-	if (showAge) classes.push("showAge");
-	if (isEditable) classes.push("isEditable");
+	if (showAge) classes.push("show-age");
+	if (isEditable) classes.push("is-editable");
 	if (selected) classes.push("selected");
 	if (baby.gender === "m") classes.push("male");
 	if (baby.gender === "f") classes.push("female");

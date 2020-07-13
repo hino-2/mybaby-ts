@@ -20,6 +20,7 @@ export const calculateLifeSpan = (dateOfBirth: Date): string => {
 		yearsOld > 0 ? `${yearsOld} ${yearWordMap[yearsOld] ? yearWordMap[yearsOld] : "лет"}` : "";
 	res += monthsOld > 0 ? ` ${monthsOld} мес` : "";
 	if (!res) res = `${daysOld} ${daysWordMap[daysOld] ? daysWordMap[daysOld] : "дней"}`;
+	if (yearsOld === 0 && monthsOld === 0) res = "";
 
 	return res;
 };

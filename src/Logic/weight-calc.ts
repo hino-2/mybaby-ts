@@ -1,15 +1,5 @@
 import { formatDate } from "./utils";
-
-type Weight = {
-	date: Date;
-	id: number;
-	weight: number;
-};
-
-type BackendResponse = {
-	error: string | null;
-	data: string | null;
-};
+import { IBabyWeight, IBackendResponse } from "../interfaces";
 
 const getDiffInDays = (dateA: Date, dateB: Date): number =>
 	Math.abs(Math.floor((dateB.getTime() - dateA.getTime()) / (1000 * 60 * 60 * 24)));
@@ -30,12 +20,12 @@ const getNextMonthAndYear = (currMonth: number, currYear: number): number[] => {
 	return [nextMonth, nextYear];
 };
 
-export const sortByDate = (a: Weight, b: Weight): number =>
+export const sortByDate = (a: IBabyWeight, b: IBabyWeight): number =>
 	new Date(a.date).getTime() - new Date(b.date).getTime();
 
-export const enrichWeights = (weights: Weight[]): Weight[] => {
-	let currWeights: Weight[] = weights.slice();
-	let newWeights: Weight[] = [];
+export const enrichWeights = (weights: IBabyWeight[]): IBabyWeight[] => {
+	let currWeights: IBabyWeight[] = weights.slice();
+	let newWeights: IBabyWeight[] = [];
 
 	weights.forEach((item, i, arr) => {
 		if (!arr[i + 1]) return;
@@ -65,7 +55,7 @@ export const enrichWeights = (weights: Weight[]): Weight[] => {
 				newWeights.push({
 					date: newDate,
 					weight: newWeight,
-					id: Date.now(),
+					id: Date.now().toString(),
 				});
 
 			oldDate = newDate;
@@ -75,7 +65,7 @@ export const enrichWeights = (weights: Weight[]): Weight[] => {
 	return [...currWeights, ...newWeights].sort(sortByDate);
 };
 
-export const saveToDB = async (enrichedWeights: Weight[]): Promise<BackendResponse> => {
+export const saveToDB = async (enrichedWeights: IBabyWeight[]): Promise<IBackendResponse> => {
 	console.log("saveToDB is not implemented yet. Also,", enrichedWeights);
 
 	return {

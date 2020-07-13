@@ -5,12 +5,12 @@ import "./LinkButton.scss";
 type LinkButtonProps = {
 	to: string;
 	text: string;
-	classe?: string;
+	classes?: string;
 	iconSide?: "left" | "right";
 	icon?: string;
 };
 
-const LinkButton: React.FC<LinkButtonProps> = ({ to, text, classe: classes, icon, iconSide }) => {
+const LinkButton: React.FC<LinkButtonProps> = ({ to, text, classes, icon, iconSide }) => {
 	return (
 		<div className="linkbutton">
 			<Link to={to} className={classes}>
