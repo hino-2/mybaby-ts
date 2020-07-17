@@ -15,6 +15,13 @@
 	.desc {
 		display: block;
 		text-align: center;
+
+		.formula {
+			display: block;
+			margin: auto;
+			width: 75%;
+			text-align: left;
+		}
 	}
 
 	.headers {

@@ -20,6 +20,7 @@ const WeightCalc: React.FC = () => {
 		babies: user ? user.babies : genericBabies,
 		selectedBabyId: "",
 		selectedBabyWeights: [],
+		// selectedBabyDOB: ,
 	});
 
 	const addWeightEntry = (): void => {
@@ -116,7 +117,11 @@ const WeightCalc: React.FC = () => {
 					<div className="label">Норма, г</div>
 					<div>&nbsp;</div>
 				</div>
-				<WeightList weights={state.selectedBabyWeights} deleteWeight={deleteWeightEntry} />
+				<WeightList
+					weights={state.selectedBabyWeights}
+					dob={state.babies.find((b) => b.id === state.selectedBabyId)?.dob || new Date()}
+					deleteWeight={deleteWeightEntry}
+				/>
 			</div>
 			<div className="buttons">
 				<div>

@@ -1,8 +1,11 @@
 import { formatDate } from "./utils";
 import { IBabyWeight, IBackendResponse } from "../interfaces";
 
-const getDiffInDays = (dateA: Date, dateB: Date): number =>
-	Math.abs(Math.floor((dateB.getTime() - dateA.getTime()) / (1000 * 60 * 60 * 24)));
+export const getDiffInDays = (dateA: Date, dateB: Date): number => {
+	const _dateA = new Date(dateA);
+	const _dateB = new Date(dateB);
+	return Math.abs(Math.floor((_dateB.getTime() - _dateA.getTime()) / (1000 * 60 * 60 * 24)));
+};
 
 const getDiffInMonths = (dateA: Date, dateB: Date): number => {
 	let diff = dateB.getMonth() - dateA.getMonth();
