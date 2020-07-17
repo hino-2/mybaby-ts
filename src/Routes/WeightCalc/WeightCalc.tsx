@@ -88,7 +88,7 @@ const WeightCalc: React.FC = () => {
 	};
 
 	const addButtonAttributes = {
-		className: `add-weight${state.selectedBabyId === "" ? " disabled" : ""}`,
+		className: `add-weight ${state.selectedBabyId === "" ? " disabled" : ""}`,
 		disabled: state.selectedBabyId ? false : true,
 		onClick: addWeightEntry,
 	};
