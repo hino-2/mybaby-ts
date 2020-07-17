@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import BabiesList from "../../Components/BabyList/BabyList";
-import WeightList from "./WeightList";
+import WeightList from "./WeightList/WeightList";
 import { sortByDate, enrichWeights, saveToDB } from "../../Logic/weight-calc";
 import { RootState, IUser, IBaby, IBabyWeight } from "../../interfaces";
 import description from "./description";
@@ -37,7 +37,7 @@ const WeightCalc: React.FC = () => {
 		});
 	};
 
-	const deleteWeightEntry = (e: React.MouseEvent) => {
+	const deleteWeightEntry = (e: React.MouseEvent): void => {
 		const target = e.target as HTMLImageElement;
 
 		e.preventDefault();
@@ -116,7 +116,7 @@ const WeightCalc: React.FC = () => {
 					<div className="label">Норма, г</div>
 					<div>&nbsp;</div>
 				</div>
-				<WeightList weights={state.selectedBabyWeights} deleteweight={deleteWeightEntry} />
+				<WeightList weights={state.selectedBabyWeights} deleteWeight={deleteWeightEntry} />
 			</div>
 			<div className="buttons">
 				<div>
