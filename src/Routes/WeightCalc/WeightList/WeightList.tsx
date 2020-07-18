@@ -1,7 +1,7 @@
 import React from "react";
 import WeightLI from "../WeightLI/WeightLI";
 import { IBabyWeight } from "../../../interfaces";
-import { getDiffInDays } from "../../../Logic/weight-calc";
+import { calcDiffInDays } from "../../../Logic/weight-calc";
 import "./WeightList.scss";
 
 type WeightListProps = {
@@ -28,7 +28,7 @@ const WeightList: React.FC<WeightListProps> = ({
 							(w) => new Date(w.date).getTime() === new Date(arr[0].date).getTime()
 						)?.weight || 0
 					}
-					ageInDays={getDiffInDays(item.date, dob)}
+					ageInDays={calcDiffInDays(item.date, dob)}
 					isEditable={isEditable}
 					deleteWeight={deleteWeight}
 					key={item.id}
