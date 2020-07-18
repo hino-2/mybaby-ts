@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import M from "materialize-css";
 import WeightDelete from "../WeightDelete/WeightDelete";
 import { IBabyWeight } from "../../../interfaces";
+import { datepickerOptions } from "../../../Styles/component_options";
 import "./WeightLI.scss";
 
 type WeightLIProps = {
@@ -26,7 +27,7 @@ const WeightLI: React.FC<WeightLIProps> = ({
 	const normalClasses: string[] = ["normal"];
 
 	useEffect(() => {
-		M.Datepicker.init(document.querySelectorAll(".datepicker"), { format: "yyyy-mm-dd" });
+		M.Datepicker.init(document.querySelectorAll(".datepicker"), datepickerOptions);
 	});
 
 	// const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -52,7 +53,6 @@ const WeightLI: React.FC<WeightLIProps> = ({
 	return (
 		<div className="weight-li">
 			<div className="date">
-				{/* <input type="date" value={date} onChange={handleDateChange} /> */}
 				<input
 					type="text"
 					defaultValue={new Date(weight.date).toLocaleDateString("en-CA")}

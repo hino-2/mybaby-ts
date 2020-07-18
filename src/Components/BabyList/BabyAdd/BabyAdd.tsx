@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Image, Transformation } from "cloudinary-react";
 import { useDispatch } from "react-redux";
 import { IBaby } from "../../../interfaces";
 import { addBabyToDB } from "../../../Logic/babies";
+import { datepickerOptions } from "../../../Styles/component_options";
 import "./BabyAdd.scss";
 
 type BabyAddProps = {
@@ -10,6 +11,10 @@ type BabyAddProps = {
 };
 
 const BabyAdd: React.FC<BabyAddProps> = ({ userId }) => {
+	useEffect(() => {
+		M.Datepicker.init(document.querySelectorAll(".datepicker"), datepickerOptions);
+	});
+
 	const today: string = new Date().toLocaleDateString("en-CA");
 	const dispatch = useDispatch();
 
@@ -68,7 +73,12 @@ const BabyAdd: React.FC<BabyAddProps> = ({ userId }) => {
 				</Image>
 			</div>
 			<div className="input-field">
-				<input type="text" ref={babyNameRef} placeholder="Имя утенка" />
+				<input
+					type="text"
+					className="baby-name"
+					ref={babyNameRef}
+					placeholder="Имя утенка"
+				/>
 			</div>
 			<div>
 				<input
@@ -87,7 +97,8 @@ const BabyAdd: React.FC<BabyAddProps> = ({ userId }) => {
 				</label>
 			</div>
 			<div className="input-field">
-				<input type="text" ref={babyDOBRef} defaultValue={today} />
+				{/* <input type="text" ref={babyDOBRef} defaultValue={today} /> */}
+				<input type="text" ref={babyDOBRef} defaultValue={today} className="datepicker" />
 			</div>
 			<div style={{ cursor: "pointer" }}>
 				<Image
