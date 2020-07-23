@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Image, Transformation } from "cloudinary-react";
-import { IBaby } from "../../../interfaces";
+import { Baby } from "../../../interfaces";
 import { formatDate, calculateLifeSpan } from "../../../Logic/utils";
 import BabyDelete from "../BabyDelete/BabyDelete";
 import "./BabyLI.scss";
 
 type BabyLIProps = {
-	baby: IBaby;
+	baby: Baby;
 	selected: boolean;
 	isEditable: boolean;
 	showAge: boolean;

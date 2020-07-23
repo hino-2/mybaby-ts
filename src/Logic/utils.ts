@@ -1,9 +1,25 @@
 import Cookies from "universal-cookie";
+import { BabyWeight } from "../interfaces";
 
 export function formatDate(date: Date): string {
 	const _d = new Date(date);
 	return _d.toLocaleDateString("en-CA");
 }
+
+export const calcDiffInDays = (dateA: Date, dateB: Date): number => {
+	const _dateA = new Date(dateA);
+	const _dateB = new Date(dateB);
+	return Math.abs(Math.floor((_dateB.getTime() - _dateA.getTime()) / (1000 * 60 * 60 * 24)));
+};
+
+export const calcDiffInMonths = (dateA: Date, dateB: Date): number => {
+	let diff = dateB.getMonth() - dateA.getMonth();
+	diff = diff < 0 ? diff + 12 : diff;
+	return Math.abs(diff);
+};
+
+export const sortByDate = (a: BabyWeight, b: BabyWeight): number =>
+	new Date(a.date).getTime() - new Date(b.date).getTime();
 
 export const calculateLifeSpan = (dateOfBirth: Date): string => {
 	const today = new Date();

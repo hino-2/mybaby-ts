@@ -1,5 +1,5 @@
 import React from "react";
-import { IBaby } from "../../../interfaces";
+import { Baby } from "../../../interfaces";
 import { deleteBaby } from "../../../Logic/babies";
 // import { useSelector }    from 'react-redux'
 import { Image, Transformation } from "cloudinary-react";
@@ -8,7 +8,7 @@ import { Image, Transformation } from "cloudinary-react";
 // import { userLogin }      from '../../actions'
 
 type BabyDeleteProps = {
-	baby: IBaby;
+	baby: Baby;
 };
 
 const BabyDelete: React.FC<BabyDeleteProps> = ({ baby }) => {

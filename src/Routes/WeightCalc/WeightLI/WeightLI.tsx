@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import M from "materialize-css";
 import WeightDelete from "../WeightDelete/WeightDelete";
-import { IBabyWeight } from "../../../interfaces";
+import { BabyWeight } from "../../../interfaces";
 import { datepickerOptions } from "../../../Styles/component_options";
 import "./WeightLI.scss";
 
 type WeightLIProps = {
-	weight: IBabyWeight;
+	weight: BabyWeight;
 	ageInDays: number;
 	birthWeight: number;
 	isEditable: boolean;

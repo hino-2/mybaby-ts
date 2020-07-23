@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import BabiesList from "../../Components/BabyList/BabyList";
 import WeightList from "./WeightList/WeightList";
-import { sortByDate, enrichWeights, saveToDB } from "../../Logic/weight-calc";
-import { RootState, IUser, IBaby, IBabyWeight } from "../../interfaces";
+import { enrichWeights, saveToDB } from "../../Logic/weight-calc/weight-calc";
+import { RootState, User, Baby, BabyWeight } from "../../interfaces";
 import description from "./description";
 import "./WeightCalc.scss";
+import { sortByDate } from "../../Logic/utils";
 
 type WeightCalcState = {
-	babies: IBaby[];
+	babies: Baby[];
 	selectedBabyId: string;
-	selectedBabyWeights: IBabyWeight[];
+	selectedBabyWeights: BabyWeight[];
 };
 
 const WeightCalc: React.FC = () => {
-	const user: IUser = useSelector((state: RootState) => state.user);
+	const user: User = useSelector((state: RootState) => state.user);
 
 	const [state, setState] = useState<WeightCalcState>({
 		babies: user ? user.babies : genericBabies,
@@ -25,7 +26,7 @@ const WeightCalc: React.FC = () => {
 
 	const addWeightEntry = (): void => {
 		setState((prev) => {
-			const newWeight: IBabyWeight = {
+			const newWeight: BabyWeight = {
 				date: new Date(),
 				weight: 0,
 				id: Date.now().toString(),
@@ -63,8 +64,8 @@ const WeightCalc: React.FC = () => {
 		const babyLIId = closestElem.id;
 
 		setState((prev) => {
-			let selectedBaby: IBaby | undefined = prev.babies.find((baby) => baby.id === babyLIId);
-			let selectedBabyWeights = [] as IBabyWeight[];
+			let selectedBaby: Baby | undefined = prev.babies.find((baby) => baby.id === babyLIId);
+			let selectedBabyWeights = [] as BabyWeight[];
 			if (selectedBaby) selectedBabyWeights = selectedBaby.weights.sort(sortByDate);
 
 			return {
@@ -137,7 +138,7 @@ const WeightCalc: React.FC = () => {
 
 export default WeightCalc;
 
-const genericBabies: IBaby[] = [
+const genericBabies: Baby[] = [
 	{
 		name: "Мальчик",
 		gender: "m",

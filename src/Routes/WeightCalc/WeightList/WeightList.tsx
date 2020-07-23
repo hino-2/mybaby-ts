@@ -1,11 +1,11 @@
 import React from "react";
 import WeightLI from "../WeightLI/WeightLI";
-import { IBabyWeight } from "../../../interfaces";
-import { calcDiffInDays } from "../../../Logic/weight-calc";
+import { BabyWeight } from "../../../interfaces";
+import { calcDiffInDays } from "../../../Logic/utils";
 import "./WeightList.scss";
 
 type WeightListProps = {
-	weights: IBabyWeight[];
+	weights: BabyWeight[];
 	dob: Date;
 	isEditable?: boolean;
 	deleteWeight: (e: React.MouseEvent) => void;
@@ -17,7 +17,7 @@ const WeightList: React.FC<WeightListProps> = ({
 	isEditable = true,
 	deleteWeight,
 }) => (
-	<div className="weights" key={weights.length}>
+	<div className="weights">
 		{weights
 			.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 			.map((item, i, arr) => (

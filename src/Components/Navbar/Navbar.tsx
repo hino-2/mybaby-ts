@@ -4,11 +4,11 @@ import LinkButton from "../LinkButton/LinkButton";
 import LoginButton from "./LoginButton/LoginButton";
 import BabyList from "../BabyList/BabyList";
 import { useSelector } from "react-redux";
-import { IUser, RootState } from "../../interfaces";
+import { User, RootState } from "../../interfaces";
 import "./Navbar.scss";
 
 const Navbar: React.FC = () => {
-	const user: IUser = useSelector((state: RootState) => state.user);
+	const user: User = useSelector((state: RootState) => state.user);
 
 	return (
 		<div className="navbar">

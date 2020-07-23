@@ -1,4 +1,4 @@
-import { IBackendResponse } from "../interfaces";
+import { BackendResponse } from "../interfaces";
 import { Dispatch } from "redux";
 import { userInfoAction } from "../Redux/actions";
 
@@ -9,7 +9,7 @@ export const login = async (
 ): Promise<string> => {
 	const url: string = "/DummyAPI/user.json";
 	// const url: string = "/login";
-	let loginResult = {} as IBackendResponse;
+	let loginResult = {} as BackendResponse;
 
 	try {
 		const response: Response = await fetch(url, {

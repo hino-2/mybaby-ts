@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Image, Transformation } from "cloudinary-react";
 import { useDispatch } from "react-redux";
-import { IBaby } from "../../../interfaces";
+import { Baby } from "../../../interfaces";
 import { addBabyToDB } from "../../../Logic/babies";
 import { datepickerOptions } from "../../../Styles/component_options";
 import "./BabyAdd.scss";
@@ -45,7 +45,7 @@ const BabyAdd: React.FC<BabyAddProps> = ({ userId }) => {
 			return;
 		}
 
-		const newBaby: IBaby = {
+		const newBaby: Baby = {
 			id: Date.now().toString(),
 			name: babyName,
 			gender: babyGender,

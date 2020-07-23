@@ -1,30 +1,30 @@
 import allReducers from "./Redux/reducers/_allReducers";
 
-export type IBabyWeight = {
+export type BabyWeight = {
 	date: Date;
 	id: string;
 	weight: number;
 };
 
-export type IBaby = {
+export type Baby = {
 	id: string;
 	name: string;
 	gender: "m" | "f";
 	dob: Date;
-	weights: IBabyWeight[] | [];
+	weights: BabyWeight[] | [];
 };
 
-export type IUser = {
+export type User = {
 	_id: string;
-	babies: IBaby[] | [];
+	babies: Baby[] | [];
 	name: string;
 	email: string;
 	gender: "m" | "f";
 	money: number;
 };
 
-export type IBackendResponse = {
-	data: IUser | null;
+export type BackendResponse = {
+	data: User | null;
 	error: string | null;
 };
 
@@ -35,7 +35,7 @@ interface IReduxAction {
 }
 
 export interface IReduxActionUserInfo extends IReduxAction {
-	payload: IUser | null;
+	payload: User | null;
 }
 
 export interface IReduxActionIsMobile extends IReduxAction {

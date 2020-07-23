@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import BabiesList from "../../Components/BabyList/BabyList";
 import BabyAdd from "../../Components/BabyList/BabyAdd/BabyAdd";
-import { RootState, IUser } from "../../interfaces";
+import { RootState, User } from "../../interfaces";
 import "./LK.scss";
 
 const LK = () => {
-	const user: IUser = useSelector((state: RootState) => state.user);
+	const user: User = useSelector((state: RootState) => state.user);
 	const history = useHistory();
 
 	const inputClasses: string[] = ["form__field"];

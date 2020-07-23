@@ -1,10 +1,10 @@
 import React from "react";
 import { Image, Transformation } from "cloudinary-react";
 import "./WeightDelete.scss";
-import { IBabyWeight } from "../../../interfaces";
+import { BabyWeight } from "../../../interfaces";
 
 type WeightDeleteProps = {
-	weight: IBabyWeight;
+	weight: BabyWeight;
 	deleteWeight: (e: React.MouseEvent) => void;
 };
 

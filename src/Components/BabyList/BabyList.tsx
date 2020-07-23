@@ -1,10 +1,10 @@
 import React from "react";
-import { IBaby } from "../../interfaces";
+import { Baby } from "../../interfaces";
 import BabyLI from "./BabyLI/BabyLI";
 import "./BabyList.scss";
 
 type BabyListProps = {
-	babies: IBaby[];
+	babies: Baby[];
 	selectedBabyId?: string;
 	isEditable: boolean;
 	showAge: boolean;
