@@ -1,6 +1,6 @@
 import { BackendResponse } from "../interfaces";
 import { Dispatch } from "redux";
-import { userInfoAction } from "../Redux/actions";
+import { userInfoAction } from "../Redux/actions/actions";
 
 export const login = async (
 	email: string,

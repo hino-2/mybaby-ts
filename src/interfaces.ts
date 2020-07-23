@@ -1,4 +1,5 @@
 import allReducers from "./Redux/reducers/_allReducers";
+import { AnyAction, Action } from "redux";
 
 export type BabyWeight = {
 	date: Date;
@@ -30,14 +31,12 @@ export type BackendResponse = {
 
 export type RootState = ReturnType<typeof allReducers>;
 
-interface IReduxAction {
+export type ReduxActionUserInfo = {
 	type: string;
-}
-
-export interface IReduxActionUserInfo extends IReduxAction {
 	payload: User | null;
-}
+};
 
-export interface IReduxActionIsMobile extends IReduxAction {
+export type ReduxActionIsMobile = {
+	type: string;
 	payload: boolean;
-}
+};

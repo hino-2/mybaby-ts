@@ -1,7 +1,7 @@
 import { Baby, BackendResponse } from "../interfaces";
 import { Dispatch } from "redux";
 import { setCookie } from "./utils";
-import { userInfoAction } from "../Redux/actions";
+import { userInfoAction } from "../Redux/actions/actions";
 
 export const addBabyToDB = async (
 	userId: string,
