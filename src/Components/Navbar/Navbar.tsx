@@ -3,12 +3,18 @@ import Title from "./Title/Title";
 import LinkButton from "../LinkButton/LinkButton";
 import LoginButton from "./LoginButton/LoginButton";
 import BabyList from "../BabyList/BabyList";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { User, RootState } from "../../interfaces";
 import "./Navbar.scss";
+import { loadData } from "../../Redux/actions/actions";
 
 const Navbar: React.FC = () => {
+	const dispatch = useDispatch();
 	const user: User = useSelector((state: RootState) => state.user);
+
+	const onclick = (): void => {
+		dispatch(loadData());
+	};
 
 	return (
 		<div className="navbar">
@@ -59,6 +65,7 @@ const Navbar: React.FC = () => {
 				icon="games"
 				iconSide="left"
 			/>
+			<button onClick={onclick}>loadData</button>
 		</div>
 	);
 };
